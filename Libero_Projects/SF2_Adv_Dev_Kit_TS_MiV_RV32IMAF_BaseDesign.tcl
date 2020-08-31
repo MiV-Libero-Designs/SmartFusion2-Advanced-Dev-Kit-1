@@ -74,10 +74,10 @@ proc download_cores_all_cfgs  { }\
 	download_core -vlnv {Actel:DirectCore:CoreGPIO:3.2.102} -location {www.microchip-ip.com/repositories/DirectCore}
 	download_core -vlnv {Actel:DirectCore:COREAXITOAHBL:3.5.100} -location {www.microchip-ip.com/repositories/DirectCore}
 	download_core -vlnv {Actel:DirectCore:COREAXI4INTERCONNECT:2.8.103} -location {www.microchip-ip.com/repositories/DirectCore}
-	download_core -vlnv {Microsemi:MiV:MIV_RV32IMC:2.1.100} -location {www.actel-ip.com/repositories/DirectCore}
-	download_core -vlnv {Microsemi:MiV:MIV_RV32IMA_L1_AHB:2.3.100} -location {www.actel-ip.com/repositories/DirectCore} 
-	download_core -vlnv {Microsemi:MiV:MIV_RV32IMA_L1_AXI:2.1.100} -location {www.actel-ip.com/repositories/DirectCore} 
-	download_core -vlnv {Microsemi:MiV:MIV_RV32IMAF_L1_AHB:2.1.100} -location {www.actel-ip.com/repositories/DirectCore} 
+	download_core -vlnv {Microsemi:MiV:MIV_RV32IMC:2.1.100} -location {www.microchip-ip.com/repositories/DirectCore}
+	download_core -vlnv {Microsemi:MiV:MIV_RV32IMA_L1_AHB:2.3.100} -location {www.microchip-ip.com/repositories/DirectCore} 
+	download_core -vlnv {Microsemi:MiV:MIV_RV32IMA_L1_AXI:2.1.100} -location {www.microchip-ip.com/repositories/DirectCore} 
+	download_core -vlnv {Microsemi:MiV:MIV_RV32IMAF_L1_AHB:2.1.100} -location {www.microchip-ip.com/repositories/DirectCore} 
 }
 
 proc pre_configure_place_and_route { }\
@@ -118,7 +118,7 @@ if {"$config" == "CFG1"} then {
 	}
 }
 
-configure_tool -name {SYNTHESIZE} -params {BLOCK_MODE:false} -params {BLOCK_PLACEMENT_CONFLICTS:ERROR} -params {BLOCK_ROUTING_CONFLICTS:LOCK} -params {CLOCK_ASYNC:200} -params {CLOCK_DATA:5000} -params {CLOCK_GLOBAL:2} -params {PA4_GB_COUNT:16} -params {PA4_GB_MAX_RCLKINT_INSERTION:16} -params {PA4_GB_MIN_GB_FANOUT_TO_USE_RCLKINT:300} -params {RAM_OPTIMIZED_FOR_POWER:0} -params {RETIMING:false} -params {SYNPLIFY_OPTIONS:} -params {SYNPLIFY_TCL_FILE:}
+configure_tool -name {SYNTHESIZE} -params {BLOCK_MODE:false} -params {BLOCK_PLACEMENT_CONFLICTS:ERROR} -params {BLOCK_ROUTING_CONFLICTS:LOCK} -params {CLOCK_ASYNC:250} -params {CLOCK_DATA:5000} -params {CLOCK_GLOBAL:2} -params {PA4_GB_COUNT:16} -params {PA4_GB_MAX_RCLKINT_INSERTION:16} -params {PA4_GB_MIN_GB_FANOUT_TO_USE_RCLKINT:300} -params {RAM_OPTIMIZED_FOR_POWER:0} -params {RETIMING:false} -params {SYNPLIFY_OPTIONS:} -params {SYNPLIFY_TCL_FILE:}
 
 if {"$design_flow_stage" == "SYNTHESIZE"} then {
 	puts "\n---------------------------------------------------------------------------------------------------------"
